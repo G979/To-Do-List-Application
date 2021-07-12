@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to bottom, #68E 0%, #47B 100%);
+}
+
+.wrapper {
+    background: #fff;
+    margin: 120px auto;
+    max-width: 400px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+}
+
+.wrapper header {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.wrapper .input-area {
+    margin : 20px 0;
+    display: flex;
+    height: 25px;
+    width: 100%;
+}
+
+.input-area input {
+    width: 85%;
+    height: 100%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    padding-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.input-area button{
+    width: 75px;
+    height: 100%;
+    border: none;
+    color: #fff;
+    margin-left: 5px;
+    outline: none;
+    background: #8E49E8;
+    cursor: pointer;
+    border-radius: 3px;
+    opacity: 0.6;
+}
+
+.input-area button {
+    width: 75px;
+    height: 100%;
+}
+
+.wrapper #task-list {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+#task-list li {
+    position: relative;
+    list-style: none;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 8px;
+    background: #f2f2f2;
+    border-radius: 3px;
+    padding: 0 15px;
+    cursor: default;
+    overflow: hidden;
+}
+
+#task-list .delete-btn {
+    position: absolute;
+    right: 0;
+    background: #e74c3c;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+input[type=checkbox] + span {
+    text-decoration: none;
+}
+input[type=checkbox]:checked + span {
+    text-decoration: line-through;
+
+}
+
