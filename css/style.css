@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
 
+:root {
+    --pastel-blue: #68E;
+    --sea-blue: #103464;
+    --wheat: #e0d7d7;
+    --ivory: #f2f2f2;
+    --blackish: #070a0e;
+    --purple: #8E49E8;
+    --orangina: #e74c3c;
+    --yellow: #ebdd17;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +22,13 @@ body {
     height: 100vh;
     width: 100%;
     padding: 10px;
-    background: linear-gradient(to bottom, #68E 0%, #47B 100%);
+    background: linear-gradient(to bottom, var(--pastel-blue) 0%, var(--sea-blue) 100%);
 }
 
 .wrapper {
-    background: #fff;
+    background: var(--wheat);
     margin: 120px auto;
-    max-width: 400px;
-    width: 100%;
+    width: 40%;
     padding: 25px;
     border-radius: 5px;
     box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
@@ -42,28 +52,56 @@ body {
     height: 100%;
     outline: none;
     border-radius: 3px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--wheat);
     font-size: 17px;
     padding-left: 15px;
     transition: all 0.3s ease;
 }
 
 .input-area button{
-    width: 75px;
-    height: 100%;
-    border: none;
-    color: #fff;
+    color: var(--blackish);
     margin-left: 5px;
     outline: none;
-    background: #8E49E8;
+    background: var(--purple);
     cursor: pointer;
     border-radius: 3px;
     opacity: 0.6;
+    width: 45px;
+    height: 40px;
 }
 
-.input-area button {
-    width: 75px;
-    height: 100%;
+#task-list .delete-btn {
+    position: absolute;
+    right: 0;
+    background: var(--orangina);
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    color: var(--blackish);
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#clear-button {
+    background: var(--yellow);
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    color: var(--blackish);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+#add-task-button:hover {
+    opacity: 0.8;
+}
+
+#add-task-button:active {
+    opacity: 0.5;
 }
 
 .wrapper #task-list {
@@ -77,31 +115,67 @@ body {
     height: 45px;
     line-height: 45px;
     margin-bottom: 8px;
-    background: #f2f2f2;
+    background: var(--ivory);
     border-radius: 3px;
     padding: 0 15px;
     cursor: default;
     overflow: hidden;
+    transition: 0.5s;
 }
 
-#task-list .delete-btn {
-    position: absolute;
-    right: 0;
-    background: #e74c3c;
-    width: 45px;
-    height: 45px;
-    text-align: center;
-    color: #fff;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
+#task-list li {
+    max-height: 0;
+    opacity: 0;
+    animation: grow 1s ease-in-out forwards;
+    -webkit-animation: grow 1s ease-in-out forwards;
+  }
+  @-webkit-keyframes grow {
+    to {
+      max-height: 100%;
+      opacity: 1;
+    }
+  }
+  @keyframes grow {
+    to {
+      max-height: 100%;
+      opacity: 1;
+    }
+  }
+
 
 input[type=checkbox] + span {
     text-decoration: none;
 }
 input[type=checkbox]:checked + span {
     text-decoration: line-through;
+}
 
+.header {
+    display: flex;
+}
+
+header {
+    margin-left: 45px;
+}
+
+
+#input-task {
+    height: 2.5rem;
+    width: 100%;
+}
+
+
+#task-list {
+    margin-top: 50px;
+}
+
+.task {
+    font-size: 25px;
+    margin-left: 20px;
+    transition: 0.4s;
+}
+
+button {
+    border: none;
 }
 
